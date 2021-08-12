@@ -7,8 +7,8 @@
 
     <string name="profile">Profile</string>
     <string name="validation_test">Working with validation</string>
-    <string name="next">Endelea</string>
-    <string name="previous">Rudi</string>
-    <string name="save">Tuma</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="save">Save</string>
     <string name="basic_form">Basic Form</string>
 </resources>
