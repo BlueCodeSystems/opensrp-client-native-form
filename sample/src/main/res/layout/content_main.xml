@@ -26,6 +26,15 @@
             android:theme="@style/NativeFormsAppTheme" />
 
         <Button
+            android:id="@+id/vca_screening"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="VCA Screening"
+            android:textColor="@android:color/white"
+            android:theme="@style/NativeFormsAppTheme" />
+
+        <Button
             android:id="@+id/wizard_form"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
