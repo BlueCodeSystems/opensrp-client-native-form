@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.repeating_group_button).setOnClickListener(this);
         findViewById(R.id.multiselect_list).setOnClickListener(this);
         findViewById(R.id.optibp_widget).setOnClickListener(this);
+        findViewById(R.id.child_case).setOnClickListener(this);
     }
 
     @Override
@@ -302,6 +303,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.optibp_widget:
                     startForm(REQUEST_CODE_GET_JSON, "optibp_demo_form", null, false);
                     break;
+                case R.id.child_case:
+                    startForm(REQUEST_CODE_GET_JSON, "child_case_plan", null, false);
+                    break;
+
                 default:
                     break;
             }

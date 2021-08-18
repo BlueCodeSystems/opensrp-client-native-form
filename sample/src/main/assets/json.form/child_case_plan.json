@@ -1,0 +1,169 @@
+{
+  "count": "4",
+  "encounter_type": "Test",
+  "entity_id": "",
+  "relational_id": "",
+  "validate_on_submit": true,
+  "skip_blank_steps": true,
+  "show_errors_on_submit": true,
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "step1": {
+    "title": "PLAN LEVEL: VCA CASE PLAN",
+    "next": "step2",
+    "fields": [
+      {
+        "key": "District",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "tree",
+        "tree": [
+          {
+            "key": "Lusaka",
+            "level": "",
+            "name": "Lusaka"
+          },
+          {
+            "key": "Chilanga",
+            "level": "",
+            "name": "Chilanga"
+          },
+          {
+            "key": "Kafue",
+            "level": "",
+            "name": "Kafue"
+          },
+          {
+            "key": "Chongwe",
+            "level": "",
+            "name": "Chongwe"
+          }
+        ],
+        "hint": "District",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the District"
+        },
+        "default": "[\"Lusaka\",\"Kafue\",\"Chilanga\",\"Chongwe\"]"
+      },
+      {
+        "key": "first_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "first_name",
+        "type": "edit_text",
+        "hidden": true,
+        "hint": "First name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the first name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "sample-calculation-rules.yml"
+            }
+          }
+        },
+        "relevance": {
+          "step1:last_name": {
+            "type": "string",
+            "ex": "equalTo(., \"Health facility\")"
+          }
+        }
+      },
+      {
+        "key": "middle_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "hidden": true,
+        "edit_text_style": "bordered",
+        "edit_type": "number",
+        "relevance": {
+          "step1:last_name": {
+            "type": "string",
+            "ex": "equalTo(., \"Health facility\")"
+          }
+        }
+      },
+      {
+        "key": "last_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "last_name",
+        "type": "edit_text",
+        "hint": "Last name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the last name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        },
+        "value": "Kuku",
+        "relevance": {
+          "step1:first_name": {
+            "type": "string",
+            "ex": "equalTo(., \"Health facility\")"
+          }
+        }
+      }
+    ]
+  }
+}
