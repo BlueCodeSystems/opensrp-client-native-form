@@ -59,6 +59,41 @@
     "next": "step2",
     "fields": [
       {
+        "key": "Province",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "tree",
+        "tree": [
+          {
+            "key": "Lusaka",
+            "level": "",
+            "name": "Lusaka"
+          },
+          {
+            "key": "Central",
+            "level": "",
+            "name": "Central"
+          },
+          {
+            "key": "Southern",
+            "level": "",
+            "name": "Southern"
+          },
+          {
+            "key": "Copperbelt",
+            "level": "",
+            "name": "Copperbelt"
+          }
+        ],
+        "hint": "Province",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the Province"
+        },
+        "default": "[\"Lusaka\",\"Central\",\"Southern\",\"Copperbelt\"]"
+      },
+      {
         "key": "District",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -88,80 +123,26 @@
         ],
         "hint": "District",
         "v_required": {
-          "value": false,
+          "value": "true",
           "err": "Please enter the District"
         },
         "default": "[\"Lusaka\",\"Kafue\",\"Chilanga\",\"Chongwe\"]"
       },
       {
-        "key": "first_name",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person",
-        "openmrs_entity_id": "first_name",
-        "type": "edit_text",
-        "hidden": true,
-        "hint": "First name",
-        "edit_type": "name",
-        "v_required": {
-          "value": "true",
-          "err": "Please enter the first name"
-        },
-        "v_regex": {
-          "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "Please enter a valid name"
-        },
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "sample-calculation-rules.yml"
-            }
-          }
-        },
-        "relevance": {
-          "step1:last_name": {
-            "type": "string",
-            "ex": "equalTo(., \"Health facility\")"
-          }
-        }
-      },
-      {
-        "key": "middle_name",
+        "key": "Ward",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
-        "type": "normal_edit_text",
-        "hidden": true,
-        "edit_text_style": "bordered",
-        "edit_type": "number",
-        "relevance": {
-          "step1:last_name": {
-            "type": "string",
-            "ex": "equalTo(., \"Health facility\")"
-          }
-        }
-      },
-      {
-        "key": "last_name",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person",
-        "openmrs_entity_id": "last_name",
         "type": "edit_text",
-        "hint": "Last name",
-        "edit_type": "name",
+        "hint": "Ward",
+        "edit_type": "ward",
         "v_required": {
           "value": "true",
-          "err": "Please enter the last name"
+          "err": "Please enter the Ward"
         },
         "v_regex": {
           "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "Please enter a valid name"
-        },
-        "value": "Kuku",
-        "relevance": {
-          "step1:first_name": {
-            "type": "string",
-            "ex": "equalTo(., \"Health facility\")"
-          }
+          "err": "Please enter a valid Ward name"
         }
       }
     ]
