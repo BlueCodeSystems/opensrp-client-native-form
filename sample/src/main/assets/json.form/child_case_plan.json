@@ -55,11 +55,11 @@
     }
   },
   "step1": {
-    "title": "PLAN LEVEL: VCA CASE PLAN",
+    "title": "VCA CASE PLAN",
     "next": "step2",
     "fields": [
       {
-        "key": "Province",
+        "key": "province",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
@@ -88,13 +88,13 @@
         ],
         "hint": "Province",
         "v_required": {
-          "value": "true",
+          "value": false,
           "err": "Please enter the Province"
         },
         "default": "[\"Lusaka\",\"Central\",\"Southern\",\"Copperbelt\"]"
       },
       {
-        "key": "District",
+        "key": "district",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
@@ -123,13 +123,13 @@
         ],
         "hint": "District",
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "Please enter the District"
         },
         "default": "[\"Lusaka\",\"Kafue\",\"Chilanga\",\"Chongwe\"]"
       },
       {
-        "key": "Ward",
+        "key": "ward",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
@@ -137,12 +137,204 @@
         "hint": "Ward",
         "edit_type": "ward",
         "v_required": {
-          "value": "true",
+          "value": false,
           "err": "Please enter the Ward"
+        }
+      },
+      {
+        "key": "village_compound",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Village/Compound",
+        "edit_type": "village_compound",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the Village/Compound"
+        }
+      },
+      {
+        "key": "health_facility",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Health Facility Name",
+        "edit_type": "health_facility",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the Health Facility Name"
+        }
+      },
+      {
+        "key": "Implementing Partner",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Implementing Partner",
+        "edit_type": "implementing_partner",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the Implementing Partner"
+        }
+      }
+    ]
+  },
+  "step2": {
+    "title": "Caregiver Details",
+    "next": "step3",
+    "fields": [
+      {
+        "key": "last_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Caregiver Surname",
+        "edit_type": "name",
+        "v_required": {
+          "value": "false",
+          "err": "Please enter the first name"
         },
         "v_regex": {
           "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "Please enter a valid Ward name"
+          "err": "Please enter a valid name"
+        }
+      },
+      {
+        "key": "First_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Caregiver First name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "false",
+          "err": "Please enter the first name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        }
+      },
+      {
+        "key": "Household_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Household ID",
+        "edit_type": "Household_id",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the Household ID"
+        }
+      },
+      {
+        "key": "Telephone_no",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Caregiver Telephone no.",
+        "edit_type": "Telephone_no",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the Caregiver Telephone no"
+        }
+      },
+      {
+        "key": "Physical_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Caregiver Physical address",
+        "edit_type": "Physical_address",
+        "v_required": {
+          "value": false,
+          "err": "Please enter the Caregiver Physical address"
+        }
+      }
+    ]
+  },
+  "step3": {
+    "title": "Case Worker Details",
+    "fields": [
+      {
+        "key": "work_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Case Worker Name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "false",
+          "err": "Please enter the first name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        }
+      },
+      {
+        "key": "nrc",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Case Worker NRC#",
+        "edit_type": "nrc",
+        "v_required": {
+          "value": "false",
+          "err": "Case Worker NRC# is required"
+        },
+        "v_numeric": {
+          "value": "true",
+          "err": "Enter Valid Case Worker NRC#"
+        }
+      },
+      {
+        "key": "case_plan_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Case Plan Created Date",
+        "expanded": false,
+        "min_date": "today-5y",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the date case plan was created"
+        }
+      },
+      {
+        "key": "fetal_heartbeat",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Is this an Initial or Updated Case Plan ?",
+        "options": [
+          {
+            "key": "initial",
+            "text": "Initial",
+            "value": false
+          },
+          {
+            "key": "updated",
+            "text": "Updated",
+            "value": false
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "Please specify if is Initial or Updated Case Plan."
         }
       }
     ]
