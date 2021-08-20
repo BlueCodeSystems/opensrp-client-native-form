@@ -111,5 +111,15 @@
             android:textColor="@android:color/white"
             android:theme="@style/NativeFormsAppTheme" />
 
+        <Button
+            android:id="@+id/child_case"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Child Case"
+            android:textColor="@android:color/white"
+            android:theme="@style/NativeFormsAppTheme" />
+
     </LinearLayout>
 </RelativeLayout>

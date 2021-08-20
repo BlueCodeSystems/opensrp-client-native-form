@@ -16,6 +16,12 @@
             android:name="org.smartregister.nativeform_tester.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/NativeFormsAppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.vijay.jsonwizard.activities.JsonFormActivity"
@@ -31,11 +37,6 @@
             android:label="@string/native_app_name"
             android:theme="@style/NativeFormsAppTheme.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider
