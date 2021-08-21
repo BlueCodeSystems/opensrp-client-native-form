@@ -188,6 +188,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivityForResult(intent, jsonFormActivityRequestCode);
                     break;
                 }
+                case "case_plan": {
+                    Intent intent = new Intent(this, JsonWizardFormActivity.class);
+                    intent.putExtra("json", jsonForm.toString());
+                    Log.d(getClass().getName(), "form is " + jsonForm.toString());
+
+                    Form form = new Form();
+                    form.setName("Case Plan");
+                    form.setWizard(true);
+                    form.setActionBarBackground(R.color.profile_actionbar);
+                    form.setNavigationBackground(R.color.profile_navigation);
+                    form.setHideSaveLabel(true);
+                    form.setNextLabel(getString(R.string.next));
+                    form.setPreviousLabel(getString(R.string.previous));
+                    form.setSaveLabel(getString(R.string.save));
+                    form.setBackIcon(R.drawable.ic_icon_positive);
+                    intent.putExtra(JsonFormConstants.JSON_FORM_KEY.FORM, form);
+
+                    startActivityForResult(intent, jsonFormActivityRequestCode);
+                    break;
+                }
                 case "validation_form": {
                     Intent intent = new Intent(this, JsonWizardFormActivity.class);
                     intent.putExtra("json", jsonForm.toString());
@@ -268,6 +288,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (id) {
                 case R.id.vca_screening:
                     startForm(REQUEST_CODE_GET_JSON, "vca_screening", null, true);
+                    break;
+                case R.id.case_plan:
+                    startForm(REQUEST_CODE_GET_JSON, "case_plan", null, true);
                     break;
                 case R.id.child_enrollment:
                     startForm(REQUEST_CODE_GET_JSON, "single_form", null, true);

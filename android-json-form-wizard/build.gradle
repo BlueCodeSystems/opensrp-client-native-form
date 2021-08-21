@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath 'org.apache.commons:commons-lang3:3.7'
     }
 }
@@ -60,6 +60,10 @@ android {
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     configurations.all {

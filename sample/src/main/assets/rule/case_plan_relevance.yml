@@ -1,0 +1,7 @@
+---
+name: step1_what_quarter_is_it
+description: what_quarter_is_it
+priority: 1
+condition: "step1_stable.contains('Yes')"
+actions:
+  - "isRelevant = true"
