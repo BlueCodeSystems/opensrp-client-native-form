@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.repeating_group_button).setOnClickListener(this);
         findViewById(R.id.multiselect_list).setOnClickListener(this);
         findViewById(R.id.optibp_widget).setOnClickListener(this);
+        findViewById(R.id.case_plan).setOnClickListener(this);
     }
 
     @Override
@@ -167,6 +168,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     startActivityForResult(intent, jsonFormActivityRequestCode);
                     break;
+
+
                 }
                 case "vca_screening": {
                     Intent intent = new Intent(this, JsonWizardFormActivity.class);
@@ -175,6 +178,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     Form form = new Form();
                     form.setName("VCA Screening Form");
+                    form.setWizard(true);
+                    form.setActionBarBackground(R.color.profile_actionbar);
+                    form.setNavigationBackground(R.color.profile_navigation);
+                    form.setHideSaveLabel(true);
+                    form.setNextLabel(getString(R.string.next));
+                    form.setPreviousLabel(getString(R.string.previous));
+                    form.setSaveLabel(getString(R.string.save));
+                    form.setBackIcon(R.drawable.ic_icon_positive);
+                    intent.putExtra(JsonFormConstants.JSON_FORM_KEY.FORM, form);
+
+                    startActivityForResult(intent, jsonFormActivityRequestCode);
+                    break;
+                }
+                case "case_plan": {
+                    Intent intent = new Intent(this, JsonWizardFormActivity.class);
+                    intent.putExtra("json", jsonForm.toString());
+                    Log.d(getClass().getName(), "form is " + jsonForm.toString());
+
+                    Form form = new Form();
+                    form.setName("Child Case Form");
                     form.setWizard(true);
                     form.setActionBarBackground(R.color.profile_actionbar);
                     form.setNavigationBackground(R.color.profile_navigation);
@@ -301,6 +324,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.optibp_widget:
                     startForm(REQUEST_CODE_GET_JSON, "optibp_demo_form", null, false);
+                    break;
+                case R.id.case_plan:
+                    startForm(REQUEST_CODE_GET_JSON, "case_plan", null, false);
                     break;
                 default:
                     break;
