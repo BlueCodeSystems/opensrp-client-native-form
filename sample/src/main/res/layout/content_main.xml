@@ -33,6 +33,14 @@
             android:text="VCA Screening"
             android:textColor="@android:color/white"
             android:theme="@style/NativeFormsAppTheme" />
+        <Button
+            android:id="@+id/case_plan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Case Plan"
+            android:textColor="@android:color/white"
+            android:theme="@style/NativeFormsAppTheme" />
 
         <Button
             android:id="@+id/wizard_form"
