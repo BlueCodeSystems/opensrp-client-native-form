@@ -1,14 +1,10 @@
 <resources>
     <string name="app_name">native-form-sample</string>
     <string name="action_settings">Settings</string>
-    <string name="action_single">Json Form (Single)</string>
-    <string name="action_wizard">Json Form Wizard</string>
-    <string name="action_validation">Json Form Validation</string>
 
-    <string name="profile">Profile</string>
-    <string name="validation_test">Working with validation</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="save">Save</string>
-    <string name="basic_form">Basic Form</string>
+
+
 </resources>
